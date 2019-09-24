@@ -2,7 +2,7 @@
 
 <h3>Chef: <%= @recipe["chef"] %></h3>
 <h5>Prep Time: <%= @recipe["formatted"]["prep_time"] %></h5>
-<h4>Ingredients: </h4>
+<h4>Ingredients: <%= @recipe["formatted"]["ingredients"] %></h4>
 
 <ul>
   <% @recipe["formatted"]["ingredients"].each do |ingredient| %>
@@ -17,6 +17,7 @@
 <% end %>
 </ol>
 
-<a href="/client/recipes">Home</a>
+<div>
+  <a href="/client/recipes/<%= @recipe['id']%>/edit">Edit</a>
 
 <img src="<%= @recipe["image_url"] %>">
